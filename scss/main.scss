@@ -1,6 +1,73 @@
-$primary-color: #217661;
+@import 'config';
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Varela&display=swap');
+
+*{
+    box-sizing: border-box;
+}
 
 body{
+    @include home_image();
     background: $primary-color;
     color: #fff;
+    font-family: 'Varela',sans-serif;
+    height: 100%;
+    line-height: 1.5;    
 }
+
+h1,h2{
+    font-family: 'Cairo',sans-serif;
+    margin: 0;
+    font-weight: 600;
+
+    &.lg-heading{
+        font-size:5.5rem
+    }
+
+    &.sm-heading{
+        margin-bottom: 2rem;
+        padding: 0.3rem 0.7rem;
+        background: rgba(lighten($primary-color, 2), 0.5);
+    }
+}
+
+a{
+    text-decoration: none;
+    color:#fff;
+}
+
+header{
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+
+main{
+    padding: 4rem;
+    height: 100%;
+
+    &#home{
+        h1{
+            margin-top: 20vh ;
+        }
+        overflow: hidden;
+    }
+
+    .icons{
+        margin-top: 1rem;
+        
+        a{
+            padding: 0.4rem;
+
+            &:hover{
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+}
+
