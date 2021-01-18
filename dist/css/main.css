@@ -1,4 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&family=Varela&display=swap");
+.nav-btn {
+  position: absolute;
+  z-index: 5;
+  top: 30px;
+  right: 35px;
+  transition: all 0.7s ease-out;
+  cursor: pointer; }
+  .nav-btn .btn-line {
+    width: 27px;
+    height: 3px;
+    background: #fff;
+    margin-bottom: 5px;
+    transition: all 0.7s ease-out; }
+  .nav-btn.btn-active {
+    transform: rotate(180deg); }
+    .nav-btn.btn-active .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .nav-btn.btn-active .btn-line:nth-child(2) {
+      opacity: 0; }
+    .nav-btn.btn-active .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
 * {
   box-sizing: border-box; }
 

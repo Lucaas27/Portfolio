@@ -1,0 +1,37 @@
+.nav-btn{
+    position: absolute;
+    z-index: 5;
+    top:30px;
+    right: 35px;
+    @include easeOut;
+    cursor: pointer;
+
+    .btn-line{
+        width: 27px;
+        height: 3px;
+        background: #fff;
+        margin-bottom: 5px;
+        @include easeOut;
+    }
+
+    //turn into X
+    &.btn-active{
+        transform: rotate(180deg);
+        .btn-line{
+            //first line rotate
+            &:nth-child(1){
+                transform: rotate(45deg) translate(5px, 5px) ;
+            }
+            //second line hide
+            &:nth-child(2){
+                opacity: 0;
+            }
+
+            //third line rotate 
+
+            &:nth-child(3){
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
