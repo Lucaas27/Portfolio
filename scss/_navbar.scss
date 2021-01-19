@@ -35,3 +35,107 @@
         }
     }
 }
+
+
+//Nav links
+
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    // opacity:0.9;
+    visibility: hidden;
+
+    &.menu {
+        visibility: visible;
+    }
+
+    &-picture, &-links{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &-links{
+        margin: 0;
+        padding: 0;
+        background: darken($primary-color, 6);
+        list-style: none;
+        //place it on the top
+        transform: translate3d(0,-100%, 0);
+        @include easeOut;
+        
+        &.menu {
+            //slide back to original place when .menu is applied
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    &-picture {
+        background: $primary-color;
+        //place it on the bottom of the page
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
+
+        &.menu {
+            //slide back to the original position when .menu is applied 
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .picture{
+        height: 250px;
+        width: 250px;
+        background: url('../img/profile.jpeg');
+        border-radius: 50%;
+        border: solid 3px $secondary-color;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .link{
+        transform: translate3d(600px, 0, 0);
+        @include easeOut;
+
+        //slide from the right side
+        &.menu{
+            transform:translate3d(0,0,0);
+        }
+
+        &.active > a{
+            color: $secondary-color;
+        }
+    }
+
+
+    //each link-item will have a delay
+    @for $x from 1 through 4 {
+        .link:nth-child(#{$x}){
+            transition-delay: $x * 0.1s;
+        }
+    }
+
+    .link-item{
+        text-transform: uppercase;
+        display: inline-block;
+        position: relative;
+        font-size: 1.6rem;
+        padding: 1rem 0;
+        text-decoration: none;
+        @include easeOut;
+
+        &:hover{
+            color: $secondary-color;
+        }
+
+    }
+
+
+}
+

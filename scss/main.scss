@@ -10,7 +10,7 @@
 body{
     @include home_image();
     background: $primary-color;
-    color: #fff;
+    color: $text-color;
     font-family: 'Varela',sans-serif;
     height: 100%;
     line-height: 1.5;    
@@ -26,9 +26,41 @@ h1,h2{
     }
 
     &.sm-heading{
+        width: fit-content;
         margin-bottom: 2rem;
         padding: 0.3rem 0.7rem;
         background: rgba(lighten($primary-color, 2), 0.5);
+    }
+
+    &.typing {
+        position: relative;
+        letter-spacing: .15rem;
+        
+        &::after {
+            white-space: nowrap;
+            margin: 0 auto;
+            content: "|";
+            position: absolute;
+            right: 0;
+            width: 100%;
+            color: $secondary-color;
+            background: rgba(lighten($primary-color, 2), 0.5);
+            animation: typing 4s steps(30) forwards,
+                blink .75s step-end infinite;
+        }
+
+        // Animation
+        @keyframes typing {
+            to {
+                width: 0;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                color: transparent;
+            }
+        }
     }
 }
 

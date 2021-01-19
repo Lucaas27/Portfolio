@@ -1,8 +1,9 @@
 $primary-color: #516b95;
 $secondary-color: #FFCAA6;
 $show-home-image: true;
-$home-image:url(/dist/img/home_image.jpg);
+$home-image:url('../img/home_image.jpg');
 $background-opacity: 0.9;
+$text-color: #fff;
 
 
 @mixin home_image {
