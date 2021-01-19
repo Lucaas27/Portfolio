@@ -24,6 +24,7 @@
 .nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   visibility: hidden; }
   .nav.menu {
@@ -87,6 +88,62 @@
     .nav .link-item:hover {
       color: #FFCAA6; }
 
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  main h2.typing {
+    position: relative;
+    letter-spacing: .15rem; }
+    main h2.typing::after {
+      white-space: nowrap;
+      margin: 0 auto;
+      content: "|";
+      position: absolute;
+      right: 0;
+      width: 100%;
+      color: #FFCAA6;
+      background: rgba(85, 112, 156, 0.5);
+      animation: typing 4s steps(30) forwards, blink 0.75s infinite; }
+  @keyframes typing {
+    to {
+      width: 0; } }
+  @keyframes blink {
+    50% {
+      color: transparent; } } }
+
+@media screen and (max-width: 768px) and (min-width: 501px) {
+  main h1.lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem; } }
+
+@media screen and (max-width: 500px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main h1.lg-heading {
+      font-size: 4.8rem;
+      line-height: 1;
+      margin-top: 10vh;
+      margin-bottom: 1rem; }
+  div.nav-picture, ul.nav-links {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    div.nav-picture.menu, ul.nav-links.menu {
+      transform: translate3d(0, 0, 0); }
+  ul.nav-links {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0); }
+    ul.nav-links .link-item {
+      font-size: 1.3rem; }
+  div.nav-picture {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    div.nav-picture .picture {
+      background: url("../img/profile_sm.jpg");
+      width: 120px;
+      height: 120px;
+      background-repeat: no-repeat;
+      background-position: center; } }
+
 * {
   box-sizing: border-box; }
 
@@ -119,30 +176,11 @@ h1, h2 {
     font-size: 5.5rem; }
   h1.sm-heading, h2.sm-heading {
     width: fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
     margin-bottom: 2rem;
     padding: 0.3rem 0.7rem;
     background: rgba(85, 112, 156, 0.5); }
-  h1.typing, h2.typing {
-    position: relative;
-    letter-spacing: .15rem; }
-    h1.typing::after, h2.typing::after {
-      white-space: nowrap;
-      margin: 0 auto;
-      content: "|";
-      position: absolute;
-      right: 0;
-      width: 100%;
-      color: #FFCAA6;
-      background: rgba(85, 112, 156, 0.5);
-      animation: typing 4s steps(30) forwards, blink 0.75s step-end infinite; }
-
-@keyframes typing {
-  to {
-    width: 0; } }
-
-@keyframes blink {
-  50% {
-    color: transparent; } }
 
 a {
   text-decoration: none;
@@ -162,7 +200,7 @@ main {
   main#home {
     overflow: hidden; }
     main#home h1 {
-      margin-top: 20vh; }
+      margin-top: 15vh; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
